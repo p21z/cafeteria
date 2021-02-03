@@ -1,0 +1,39 @@
+.main-title{
+    text-align: center;
+}
+
+.food-item-available{
+    float: left;
+    margin: 5px 12px;
+    color: #000;
+}
+
+.food-item-unavailable{
+    float: left;
+    margin: 5px 12px;
+}
+
+.food-itemX-available{
+    float: left;
+    margin: 2% 2%;
+    color: #000;
+}
+
+.food-itemX-unavailable{
+    float: left;
+    margin: 2% 2%;
+}
+
+.add-item{
+    margin: 5px 12px;
+}
+
+.carttelem{
+    margin: 0 auto;
+}
+
+.crop-img{
+    position: absolute;
+    clip: rect(0px,400px,200px,0px);
+}
+
