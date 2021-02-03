@@ -51,9 +51,9 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="home.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                    <span>Homepage</span></a>
             </li>
 
             <!-- Divider -->
@@ -71,7 +71,7 @@
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Accounts</span>
                 </a>
-                
+
             </li>
 
             <li class="nav-item">
