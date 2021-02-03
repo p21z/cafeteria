@@ -1,8 +1,6 @@
 <?php
     session_start();
     include "perfect_function.php";
-
-    
 ?>
 
 <!DOCTYPE html>

@@ -25,13 +25,11 @@ if ($password1==$password){
     $_SESSION['username']=$username;
     $_SESSION['fullname']=$fullname;
     
-    header("Location: orderfood.php");
+    header("Location: home.php");
 } else {
     $_SESSION['login']=1;
     header("Location: index.php");
 }
-
-
 
 
 ?>

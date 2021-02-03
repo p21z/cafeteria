@@ -36,6 +36,9 @@
             <h5 class="card-title">Registration</h5>
             
             <div>
+
+            <form method="post" action="register_proc.php">
+
             <input type="text" name="username" class="form-control form-control-user" autocomplete=off required placeholder="Username" style="width:44%; margin-left:3%; margin-top:3%;  float: left;">
                 <input type="text" name="fullname" class="form-control form-control-user" autocomplete=off required placeholder="Full name" style="width:44%; margin-left:3%; margin-top:3%; float: left;">
             </div>
@@ -55,7 +58,9 @@
             </div>
 
             <div style="margin-top: 200px;">
-            <a href="register_proc.php" class="btn btn-success" style="margin-top: 30px;">Enter</a>
+            <!-- <a href="register_proc.php" class="btn btn-success" style="margin-top: 30px;">Enter</a> -->
+            <button type=submit class="btn btn-success" style="margin-top: 30px;">Enter</button>
+            </form>
             <a href="index.php" class="btn btn-primary" style="margin-top: 30px;">Log in</a>
             </div>
         </div>
