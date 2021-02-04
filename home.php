@@ -45,6 +45,8 @@ include "header.php";
         <h6 class="m-0 font-weight-bold text-primary ">MENU</h6>
     </div>
     <div style="color: black;" class="card-body text-dark">
+
+<?php if($_SESSION['access']=="Admin"){?>
         
         <h2 style="margin-top: 2%;">Admin Modules</h2>
         <hr>
@@ -70,6 +72,9 @@ include "header.php";
         </div>
         <hr>
 
+<?php   } ?>
+
+<?php if($_SESSION['access']=="Admin" OR $_SESSION['access']=="Staff"){?>
         <h2 style="margin-top: 2%;">Staff Modules</h2>
         <hr>
         <div class="row">
@@ -102,6 +107,7 @@ include "header.php";
             </div>
         </div>
         <hr>
+<?php   } ?>
 
         <h2 style="margin-top: 2%;">Customer Modules</h2>
         <hr>

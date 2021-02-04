@@ -1,6 +1,11 @@
 <?php
     session_start();
     include "perfect_function.php";
+
+    if(!isset($_SESSION['idxx'])){
+        header("Location: index.php");
+    }
+  
 ?>
 
 <!DOCTYPE html>
@@ -59,6 +64,7 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
+<?php if($_SESSION['access']=="Admin"){?>
             <!-- Heading -->
             <div class="sidebar-heading">
                 Admin Modules
@@ -85,8 +91,9 @@
 
             <!-- Divider -->
             <hr class="sidebar-divider">
-
+<?php   } ?>
 <!-- Divider -->
+<?php if($_SESSION['access']=="Admin" OR $_SESSION['access']=="Staff"){?>
             <hr class="sidebar-divider">
 
             <!-- Heading -->
@@ -124,7 +131,7 @@
 
             <!-- Divider -->
             <hr class="sidebar-divider">
-
+<?php   } ?>
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -230,9 +237,9 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 medium"><?php echo $_SESSION['fullname'] ?></span>
+                                <br>
+                                <i class="fas fa-user"></i>
                             </a>
                             
                         </li>
