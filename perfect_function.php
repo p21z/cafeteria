@@ -45,14 +45,14 @@ function get_where_custom($table_name, $column, $value)
 function get_where_double($table_name, $column1, $value1, $column2, $value2)
 {
 	$conn = getConnection();
-	$sql = "SELECT * FROM $table_name where ".$column1." ='".$value1."' and ".$column2."='".$value2."'";
+	$sql = "SELECT * FROM $table_name where ".$column1." ='".$value1."' or ".$column2."='".$value2."'";
 	$result = $conn->query($sql);
 	return $result;
 }
 function count_where_double($table_name, $column1, $value1, $column2, $value2)
 {
 	$conn = getConnection();
-	$sql = "SELECT * FROM $table_name where ".$column1." ='".$value1."' and ".$column2."='".$value2."'";
+	$sql = "SELECT * FROM $table_name where ".$column1." = '".$value1."' or ".$column2." = '".$value2."'";
 	$result = $conn->query($sql);
 	$rowcount=mysqli_num_rows($result);
 	return $rowcount;
@@ -448,5 +448,56 @@ function get_where_desc($table_name, $column, $value)
 	$result = $conn->query($sql);
 	return $result;
 }
+
+function get_latest($table_name, $column, $value, $order_id)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM $table_name where ".$column."='".$value."'ORDER BY ".$order_id." DESC LIMIT 1";
+	$result = $conn->query($sql);
+	return $result;
+}
+
+function get_where_desc2($table_name, $column, $value)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM $table_name where ".$column."='".$value."'ORDER BY reserve_id DESC";
+	$result = $conn->query($sql);
+	return $result;
+}
+
+function get_latest_count($table_name, $column, $value, $order_id)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM $table_name where ".$column."='".$value."'ORDER BY ".$order_id." DESC LIMIT 1";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function get_latest_2($table_name, $column, $value, $column2, $value2, $order_id)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM $table_name where ".$column."='".$value."' and ".$column2."!='".$value2."' ORDER BY ".$order_id." DESC LIMIT 1";
+	$result = $conn->query($sql);
+	return $result;
+}
+
+function get_latest_count_2($table_name, $column, $value, $column2, $value2, $order_id)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM $table_name where ".$column."='".$value."' and ".$column2."!='".$value2."' ORDER BY ".$order_id." DESC LIMIT 1";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
+
+function get_where_not_2_custom($table_name, $column1, $value1, $column2, $value2)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM $table_name where ".$column1."!='".$value1."' and ".$column2." != '".$value2."'";
+	$result = $conn->query($sql);
+	return $result;
+}
+
 
 ?>

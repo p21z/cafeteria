@@ -83,7 +83,7 @@ include "header.php";
                 <div class="card-body">
                     <h4 class="card-title">Table Reservations</h4>
                     <p class="card-text">View the table reservations of customers.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a href="tablereservations.php" class="btn btn-primary">Go somewhere</a>
                 </div>
                 </div>
             </div>
@@ -117,7 +117,7 @@ include "header.php";
                 <div class="card-body">
                     <h4 class="card-title">Reserve Table</h4>
                     <p class="card-text">Create a reservation for a table in the cafeteria.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a href="reservetable.php" class="btn btn-primary">Go somewhere</a>
                 </div>
                 </div>
             </div>
@@ -126,7 +126,7 @@ include "header.php";
                 <div class="card-body">
                     <h4 class="card-title">Order Food</h4>
                     <p class="card-text">View menu and order in the cafeteria.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a href="orderfood.php" class="btn btn-primary">Go somewhere</a>
                 </div>
                 </div>
             </div>
