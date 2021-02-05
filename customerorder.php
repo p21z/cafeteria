@@ -39,7 +39,7 @@ include "header.php";
         <h6 class="m-0 font-weight-bold text-primary ">ORDER #<?= $order_id?></h6>
     </div>
     <div class="card-body" style="max-height: 420px; overflow: auto; min-height: 420px;">
-        <div class="table-responsive" style="max-height: 420px; overflow: auto; min-height: 420px;">
+        <div class="table-responsive">
         
             <table class="table carttelem" style="width: 80%;" >
             <h4 style="margin: 5px 0px 20px 20px; color: #000;">For: <b><?=$fullname?></b></h4>

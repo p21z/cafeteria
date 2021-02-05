@@ -39,6 +39,7 @@
 
         <select type="text" name="user_type" class="form-control form-control-user" autocomplete=off required style="width:40%; margin-left:6%; margin-right: 3%; margin-top:3%;">
           <option value="">User type:</option>
+          <option value="Admin">Admin</option>
           <option value="Employee">Employee</option>
           <option value="Student">Student</option>
           <option value="Staff">Staff</option>

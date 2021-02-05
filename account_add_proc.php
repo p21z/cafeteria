@@ -29,39 +29,39 @@
 
         // ______________________________________________________________________________________________________________________
     // GETTING ENTRY ID
-    // $table_name = "accounts";
-    // $column = "acc_id";
+    $table_name = "accounts";
+    $column = "id";
 
-    // $user_data=get_last($table_name, $column);
+    $user_data=get_last($table_name, $column);
     
-    //     foreach ($user_data as $key => $row) {
-    //         $acc_id=$row['acc_id'];
+        foreach ($user_data as $key => $row) {
+            $id=$row['id'];
 
             
-    //     }
+        }
     
     
-    // date_default_timezone_set('Asia/Singapore');
+    date_default_timezone_set('Asia/Singapore');
 
-    // $table_name="logs";
-    // $username= $_SESSION['username'];
-    // $fullname=$_SESSION['firstlast'];
-    // $user_type=$_SESSION['access'];
-    // $xdate=date('Y-m-d');
-    // $xtime=date('h:i:sa');
-    // $action="Added in accounts(".$acc_id.")";
+    $table_name="logs";
+    $username= $_SESSION['username'];
+    $fullname=$_SESSION['fullname'];
+    $user_type=$_SESSION['access'];
+    $xdate=date('Y-m-d');
+    $xtime=date('h:i:sa');
+    $action="Added in accounts(".$id.")";
     
-    // $user_data=array(
-    //     "username" => $username ,
-    //     "fullname" => $fullname ,
-    //     "user_type" => $user_type ,
-    //     "xdate" => $xdate ,
-    //     "xtime" => $xtime ,
-    //     "action" => $action 
+    $user_data=array(
+        "username" => $username ,
+        "fullname" => $fullname ,
+        "user_type" => $user_type ,
+        "xdate" => $xdate ,
+        "xtime" => $xtime ,
+        "action" => $action 
 
-    // );
+    );
 
-    // echo insert($user_data, $table_name);
+    echo insert($user_data, $table_name);
     
 // ______________________________________________________________________________________________________________________
 
