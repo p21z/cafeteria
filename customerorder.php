@@ -62,7 +62,7 @@ include "header.php";
 
             
 
-            <a href="class_add.php" class="btn btn-success btn-icon-split add-item" style="float: right; margin-right:10%;">
+            <a href="order_ready.php?id=<?=$order_id?>" class="btn btn-success btn-icon-split add-item" style="float: right; margin-right:10%;">
                 <span class="icon text-white-50">
                     <i class="fas fa-user-plus"></i>
                 </span>
@@ -71,7 +71,7 @@ include "header.php";
                 </span>
             </a>
 
-            <a href="class_add.php" class="btn btn-danger btn-icon-split add-item" style="float: right; margin-right:5%;">
+            <a href="order_deny.php?id=<?=$order_id?>" class="btn btn-danger btn-icon-split add-item" style="float: right; margin-right:5%;">
                 <span class="icon text-white-50">
                     <i class="fas fa-user-plus"></i>
                 </span>

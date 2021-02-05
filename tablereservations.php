@@ -131,6 +131,12 @@ include "header.php";
         $xdate=$row['xdate'];
         $status=$row['status'];
         
+        if ($status=="Cleared"){
+            $state="success";
+        } else {
+            $state="danger";
+        }
+        
 ?>
 
         <!-- <div class="card text-dark bg-light border-secondary mb-3 w-50"  style="margin: 5% auto 5%;">
@@ -146,15 +152,15 @@ include "header.php";
                 </div>
             </div> -->
         <div>
-            <div class="card border-danger mb-2 bg-light" style="margin: 15px 0px 25px 20px; float:left;">
-                <div class="card-header bg-transparent border-danger text-danger"><b>Reservation ID: <?=$reserve_id ?></b></div>
+            <div class="card border-<?=$state?> mb-2 bg-light" style="margin: 15px 0px 25px 20px; float:left;">
+                <div class="card-header bg-transparent border-<?=$state?> text-<?=$state?>"><b>Reservation ID: <?=$reserve_id ?></b></div>
                     <div class="card-body">
-                        <h5 class="card-title text-danger"><?=$customer_name ?></h5>
-                        <p class="card-text text-danger">
+                        <h5 class="card-title text-<?=$state?>"><?=$customer_name ?></h5>
+                        <p class="card-text text-<?=$state?>">
                         Date reserved: <?=$xdate ?><br>
                         Time reserved: <?=$xtime ?>
                         </p>
-                        <h5 class="text-danger">Status: <b><?= $status ?></b></h5>
+                        <h5 class="text-<?=$state?>">Status: <b><?= $status ?></b></h5>
                         </p>
                         <!-- <a href="reserve_update.php?id=<?=$reserve_id?>" class="btn btn-sm btn-outline-info w-50">Update</a> -->
                     </div>

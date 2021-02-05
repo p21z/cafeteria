@@ -11,8 +11,8 @@ $id = $_GET['id'];
     $idxx=$_SESSION['idxx'];
     $col2 = "food_id";
 
-    $rowcount=count_where_double($table_namexx, $col1, $idxx, $col2, $id);
-    echo $rowcount. "<br>";
+    $rowcount=count_where_double_and($table_namexx, $col1, $idxx, $col2, $id);
+    echo "rowcount: ". $rowcount. "<br>";
 
 // taking food_id
     $table_name = "food";
