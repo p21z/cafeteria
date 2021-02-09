@@ -69,6 +69,15 @@ include "header.php";
                 </div>
                 </div>
             </div>
+            <div class="col-sm-4">
+                <div class="card bg-light">
+                <div class="card-body">
+                    <h4 class="card-title">Logs</h4>
+                    <p class="card-text">View changes and updates made by users of the system.</p>
+                    <a href="logs.php" class="btn btn-primary">Go somewhere</a>
+                </div>
+                </div>
+            </div>
         </div>
         <hr>
 

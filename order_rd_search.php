@@ -1,5 +1,6 @@
 <?php
 include "header.php";
+$search=$_POST['search'];
 ?>
 
 
@@ -22,13 +23,25 @@ include "header.php";
                 </div>
             </div>
         </form>
-    <hr>
+
+        <a href="finishedorder.php" class="btn btn-info btn-icon-split add-item" style="margin-top:-1px">
+                <span class="icon text-white-50">
+                    <i class="fas fa-user-plus"></i>
+                </span>
+                <span class="text">
+                &nbsp;&nbsp;SEE ALL&nbsp;&nbsp;
+                </span>
+            </a>
+            
+        <p style="margin-left:1%; margin-top:1%">Results for <b><i>'<?=$search?>'</i></b></p>
+
+        <hr>
     <?php
                 $table_name="orders";
                 $column = "status";
                 $value="Ready";
 
-                $get_userData = get_where_custom($table_name, $column, $value);
+                $get_userData = order_rd_search($table_name, $search);
         
                 foreach ($get_userData as $key => $row) {
                     $order_id=$row['order_id'];
@@ -92,6 +105,7 @@ include "header.php";
     <div class="card-header">
         COMPLETED ORDERS
     </div>
+    <div class="card-body">
     <div class="card-body">
         <form method="post" action="order_dn_search.php"
             class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"

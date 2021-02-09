@@ -525,5 +525,123 @@ function get_where_not_custom($table_name, $column1, $value1)
 	return $result;
 }
 
+function acc_search($table_name, $search)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM $table_name where
+	 (id LIKE '%$search%' OR
+	 user_type LIKE '%$search%' OR 
+	 reference_id LIKE '%$search%' OR 
+	 fullname LIKE '%$search%' OR 
+	 username LIKE '%$search%')";
+	$result = $conn->query($sql);
+	return $result;
+}
+
+function food_search($table_name, $search)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM $table_name where
+	 (food_id LIKE '%$search%' OR
+	 food_name LIKE '%$search%' OR 
+	 'image' LIKE '%$search%' OR 
+	 description LIKE '%$search%' OR
+	 status LIKE '%$search%')";
+	$result = $conn->query($sql);
+	return $result;
+}
+
+function reserve_active_search($table_name, $search)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM $table_name where
+	 (reserve_id LIKE '%$search%' OR
+	 customer_id LIKE '%$search%' OR 
+	 customer_name LIKE '%$search%' OR 
+	 xtime LIKE '%$search%' OR 
+	 xdate LIKE '%$search%')  AND (status != 'Cleared')  AND (status != 'Denied')";
+	$result = $conn->query($sql);
+	return $result;
+}
+
+function reserve_inactive_search($table_name, $search)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM $table_name where
+	 (reserve_id LIKE '%$search%' OR
+	 customer_id LIKE '%$search%' OR 
+	 customer_name LIKE '%$search%' OR 
+	 xtime LIKE '%$search%' OR 
+	 xdate LIKE '%$search%')  AND (status = 'Cleared' OR status = 'Denied')";
+	$result = $conn->query($sql);
+	return $result;
+}
+
+function order_pend_search($table_name, $search)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM $table_name where
+	 (order_id LIKE '%$search%' OR
+	 total_list LIKE '%$search%' OR
+	 carts LIKE '%$search%' OR 
+	 id LIKE '%$search%' OR 
+	 fullname LIKE '%$search%')  AND (status = 'Pending')";
+	$result = $conn->query($sql);
+	return $result;
+}
+
+function order_rd_search($table_name, $search)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM $table_name where
+	 (order_id LIKE '%$search%' OR
+	 total_list LIKE '%$search%' OR
+	 carts LIKE '%$search%' OR 
+	 id LIKE '%$search%' OR 
+	 fullname LIKE '%$search%')  AND (status = 'Ready')";
+	$result = $conn->query($sql);
+	return $result;
+}
+
+function order_dn_search($table_name, $search)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM $table_name where
+	 (food_id LIKE '%$search%' OR
+	 food_name LIKE '%$search%' OR
+	 image LIKE '%$search%' OR 
+	 description LIKE '%$search%' OR 
+	 price LIKE '%$search%' OR 
+	 status LIKE '%$search%')  AND (status = 'Available')";
+	$result = $conn->query($sql);
+	return $result;
+}
+
+function order_mn_search($table_name, $search, $idxx)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM $table_name where
+	 (order_id LIKE '%$search%' OR
+	 total_list LIKE '%$search%' OR
+	 carts LIKE '%$search%' OR 
+	 id LIKE '%$search%' OR 
+	 fullname LIKE '%$search%') AND (id = $idxx) ORDER BY order_id DESC";
+	$result = $conn->query($sql);
+	return $result;
+}
+
+function order_mn_search_count($table_name, $search, $idxx)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM $table_name where
+	 (order_id LIKE '%$search%' OR
+	 total_list LIKE '%$search%' OR
+	 carts LIKE '%$search%' OR 
+	 id LIKE '%$search%' OR 
+	 fullname LIKE '%$search%') AND (id = $idxx) ORDER BY order_id DESC";
+	$result = $conn->query($sql);
+	$rowcount=mysqli_num_rows($result);
+	return $rowcount;
+}
 
 ?>

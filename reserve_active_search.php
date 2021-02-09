@@ -1,5 +1,6 @@
 <?php
 include "header.php";
+$search=$_POST['search'];
 ?>
 
 <?php
@@ -41,12 +42,12 @@ include "header.php";
 ?>
 
 <div>
-    <div class="card mb-6 w-100">
+    <div class="card mb-6 w-100" style="min-height: 700px">
 
     <h4 class="text text-primary" style="margin-top: 2%; margin-left: 2%; text-align: left;">Active Reservations</h4>
     <hr>
 
-    
+        
         <form method="post" action="reserve_active_search.php"
                 class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search w-25" style="float: left;">
                 <div class="input-group">
@@ -59,6 +60,19 @@ include "header.php";
                     </div>
                 </div>
             </form>
+
+        <div>
+        <a href="tablereservations.php" class="btn btn-info btn-icon-split add-item" style="margin-top: 10px;">
+            <span class="icon text-white-50">
+                <i class="fas fa-user-plus"></i>
+            </span>
+            <span class="text">
+                &nbsp;&nbsp;SEE ALL&nbsp;&nbsp;
+            </span>
+        </a>
+        </div>
+        
+        <p style="margin-top: 1%; margin-left: 1%; text-align: left;">Results for <b><i>'<?=$search?>'</i></b></p>
     <hr>
     <div>
 <?php
@@ -67,7 +81,8 @@ include "header.php";
     $value="Cleared";
     $column2 = "status";
     $value2="Denied";
-    $get_userData = get_where_not_2_custom($table_name, $column, $value, $column2, $value2);
+    
+    $get_userData = reserve_active_search($table_name, $search);
 
     foreach ($get_userData as $key => $row) {
         $reserve_id=$row['reserve_id'];
@@ -118,83 +133,12 @@ include "header.php";
 
 
 
+
     <br>
     
-    <?php
-
-    $counting=count_where_double($table_name, $column, $value, $column2, $value2);
     
-    if ($counting!=0){
-    ?>
-
-<div>
-    <div class="card mb-6 w-100">
-
-    <h4 class="text text-primary" style="margin-top: 2%; margin-left: 2%; text-align: left;">Inactive Reservations</h4>
-    <hr>
-    <form method="post" action="reserve_inactive_search.php"
-                class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search w-25" style="float: left;">
-                <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small" name="search"
-                        aria-label="Search" aria-describedby="basic-addon2" autocomplete="off" required>
-                    <div class="input-group-append">
-                        <button class="btn btn-secondary" type="submit">
-                            <i class="fas fa-search fa-sm"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
-    <hr>
-
-    <?php
-        $table_name="reserve";
-        $column = "status";
-        $value="Cleared";
-        $column2 = "status";
-        $value2="Denied";
-        $get_userData = get_where_double($table_name, $column, $value, $column2, $value2);
-            
-        foreach ($get_userData as $key => $row) {
-            $reserve_id=$row['reserve_id'];
-            $customer_id=$row['customer_id'];
-            $customer_name=$row['customer_name'];
-            $status=$row['status'];
-            $xtime=$row['xtime'];
-            $xdate=$row['xdate'];
-            $status=$row['status'];
-            
-            if ($status=="Cleared"){
-                $state="success";
-            } else {
-                $state="danger";
-            }
-            
-    ?>
-
-            <!-- kjdlfgbkldhsfbgsjdfhbgsdjkfbgjsfkjdlfgbkldhsfbgsjdfhbgsdjkfbgjsfkjdlfgbkldhsfbgsjdfhbgsdjkfbgjsfkjdlfgbkldhsfbgsjdfhbgsdjkfbgjsfkjdlfgbkldhsfbgsjdfhbgsdjkfbgjsfkjdlfgbkldhsfbgsjdfhbgsdjkfbgjsfkjdlfgbkldhsfbgsjdfhbgsdjkfbgjsfkjdlfgbkldhsfbgsjdfhbgsdjkfbgjsfkjdlfgbkldhsfbgsjdfhbgsdjkfbgjsfkjdlfgbkldhsfbgsjdfhbgsdjkfbgjsfkjdlfgbkldhsfbgsjdfhbgsdjkfbgjsfkjdlfgbkldhsfbgsjdfhbgsdjkfbgjsfkjdlfgbkldhsfbgsjdfhbgsdjkfbgjsfkjdlfgbkldhsfbgsjdfhbgsdjkfbgjsfkjdlfgbkldhsfbgsjdfhbgsdjkfbgjsfkjdlfgbkldhsfbgsjdfhbgsdjkfbgjsfkjdlfgbkldhsfbgsjdfhbgsdjkfbgjsfkjdlfgbkldhsfbgsjdfhbgsdjkfbgjsf -->
-            <div>
-            <div class="card border-<?=$state?> mb-2" style="margin: 15px 0px 15px 20px; float:left;">
-                <div class="card-header bg-transparent border-<?=$state?> text-<?=$state?>"><b>Reservation ID: <?=$reserve_id ?></b></div>
-                    <div class="card-body">
-                        <h5 class="card-title text-<?=$state?>"><?=$customer_name ?></h5>
-                        <p class="card-text text-<?=$state?>">
-                        Date reserved: <?=$xdate ?><br>
-                        Time reserved: <?=$xtime ?>
-                        </p>
-                        <h5 class="text-<?=$state?>">Status: <b><?= $status ?></b></h5>
-                        </p>
-                        
-                    </div>
-                </div>
-
-<?php   }
-
-            } ?>
         
-    </div>
-</div>
-</div>
-</div>
+
 
 <?php
     echo "<br><br>";

@@ -1,15 +1,15 @@
 <?php
 include "header.php";
-
+$search=$_POST['search'];
 ?>
 
 <form method=post action="order_pend_search.php"
     class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"
-    style="width:35%; padding-top: 4px;">
+    style="width:35%; padding-top: 4px; float: left">
     
     <div class="input-group">
-        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." name=search required
-            aria-label="Search" aria-describedby="basic-addon2" autocomplete="off">
+        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." name="search"
+            aria-label="Search" aria-describedby="basic-addon2" required autocomplete="off">
         <div class="input-group-append">
             <button class="btn btn-secondary" type="submit">
                 <i class="fas fa-search fa-sm"></i>
@@ -17,14 +17,24 @@ include "header.php";
         </div>
     </div>
 </form>
+
+    <a href="accountmanage.php" class="btn btn-info btn-icon-split add-item" style="margin-top:-1px">
+        <span class="icon text-white-50">
+            <i class="fas fa-user-plus"></i>
+        </span>
+        <span class="text">
+        &nbsp;&nbsp;SEE ALL&nbsp;&nbsp;
+        </span>
+    </a>
 <hr>
 
 <?php
             $table_name="orders";
+            
             $column = "status";
             $condition="Pending";
-            
-            $get_userData = get_where_custom($table_name, $column, $condition);
+
+            $get_userData = order_pend_search($table_name, $search);
     
             foreach ($get_userData as $key => $row) {
                 $order_id=$row['order_id'];

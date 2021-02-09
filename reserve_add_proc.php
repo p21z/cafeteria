@@ -28,39 +28,27 @@
 
         // ______________________________________________________________________________________________________________________
     // GETTING ENTRY ID
-    // $table_name = "accounts";
-    // $column = "acc_id";
+    date_default_timezone_set('Asia/Singapore');
 
-    // $user_data=get_last($table_name, $column);
+    $table_name="logs";
+    $username= $_SESSION['username'];
+    $fullname=$_SESSION['fullname'];
+    $user_type=$_SESSION['access'];
+    $xdate=date('Y-m-d');
+    $xtime=date('h:i:sa');
+    $action="Edited in reserve(".$id.")";
     
-    //     foreach ($user_data as $key => $row) {
-    //         $acc_id=$row['acc_id'];
+    $user_data=array(
+        "username" => $username ,
+        "fullname" => $fullname ,
+        "user_type" => $user_type ,
+        "xdate" => $xdate ,
+        "xtime" => $xtime ,
+        "action" => $action 
 
-            
-    //     }
-    
-    
-    // date_default_timezone_set('Asia/Singapore');
+    );
 
-    // $table_name="logs";
-    // $username= $_SESSION['username'];
-    // $fullname=$_SESSION['firstlast'];
-    // $user_type=$_SESSION['access'];
-    // $xdate=date('Y-m-d');
-    // $xtime=date('h:i:sa');
-    // $action="Added in accounts(".$acc_id.")";
-    
-    // $user_data=array(
-    //     "username" => $username ,
-    //     "fullname" => $fullname ,
-    //     "user_type" => $user_type ,
-    //     "xdate" => $xdate ,
-    //     "xtime" => $xtime ,
-    //     "action" => $action 
-
-    // );
-
-    // echo insert($user_data, $table_name);
+    echo insert($user_data, $table_name);
     
 // ______________________________________________________________________________________________________________________
 

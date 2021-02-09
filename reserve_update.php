@@ -53,6 +53,14 @@
                                 UPDATE
                             </span>
                         </button>
+                        <a href="tablereservations.php" type="submit" class="btn btn-danger btn-icon-split" style="margin-left:%; margin-top:3%; margin-bottom: 5%">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-user-plus"></i>
+                            </span>
+                            <span class="text">
+                                BACK
+                            </span>
+                        </a>
                     </form>
 
                 </div>
@@ -61,7 +69,7 @@
         <br>
         </div>
     </div>
-</div>
+
 
  
 

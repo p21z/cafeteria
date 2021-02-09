@@ -1,5 +1,6 @@
 <?php
 include "header.php";
+$search=$_POST['search'];
 ?>
 
 <?php
@@ -40,8 +41,6 @@ include "header.php";
     }
 ?>
 
-
-
  <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Edit Menu Content</h1>
@@ -70,11 +69,11 @@ include "header.php";
                 </div>
             </form>
 
-            <div class="btn-group" role="group" aria-label="Basic example" style="margin: 5px 2px 5px 14px;">
+            <div class="btn-group" role="group" aria-label="Basic example" style="margin: 0px 2px 5px 14px;">
                 <button type="button" class="btn btn-dark" disabled>Filter</button>
-                <button type="button" class="btn btn-outline-secondary bg-primary">
+                <button type="button" class="btn btn-outline-secondary">
                     <a href="menucontent_available.php">
-                        <span class="text text-white">
+                        <span class="text">
                             Available
                         </span>
                     </a>
@@ -86,33 +85,34 @@ include "header.php";
                         </span>
                     </a>
                 </button>
-                <button type="button" class="btn btn-outline-secondary">
+                <button type="button" class="btn btn-outline-secondary bg-primary">
                     <a href="menucontent.php">
-                        <span class="text">
+                        <span class="text text-white">
                             None
                         </span>
                     </a>
                 </button>
             </div>
             
-            <a href="food_add.php" class="btn btn-primary btn-icon-split add-item btn-sm">
+            <a href="menucontent.php" class="btn btn-info btn-icon-split add-item" style="margin-top:-1px">
                 <span class="icon text-white-50">
                     <i class="fas fa-user-plus"></i>
                 </span>
                 <span class="text">
-                    ADD ITEM
+                &nbsp;&nbsp;SEE ALL&nbsp;&nbsp;
                 </span>
             </a>
+
+            <p>Results for <b><i>'<?=$search?>'</i></b></p>
 
            <hr>
 
            <?php
                 $table_name="food";
-                $column = "status";
-                $condition="Available";
-                $get_userData = get_where_custom($table_name, $column, $condition);
-        
-                foreach ($get_userData as $key => $row) {
+
+                $user_data=food_search($table_name, $search);
+
+                foreach ($user_data as $key => $row) {
                     $food_id=$row['food_id'];
                     $food_name=$row['food_name'];
                     $image=$row['image'];
@@ -122,7 +122,7 @@ include "header.php";
                     
             ?>
 
-            <div class="card food-item-<?php   if ($status=="Available"){?>available<?php } else{?>unavailable bg-light mb-3<?php   }?>" 
+            <div class="card food-item-<?php   if ($status=="Available"){?>available<?php } else{?>unavailable bg-light<?php   }?>" 
             style="width: 18rem;">
                 
                 <img class="card-img-top crop-img" src="assets/food/<?=$image?>" alt="Card image cap">

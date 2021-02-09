@@ -1,5 +1,6 @@
 <?php
 include "header.php";
+$search=$_POST['search'];
 ?>
 
 <form method="post" action="order_mn_search.php"
@@ -16,6 +17,18 @@ include "header.php";
         </div>
     </div>
 </form>
+
+<a href="receipt.php" class="btn btn-info btn-icon-split add-item" style="margin-top:-1px">
+                <span class="icon text-white-50">
+                    <i class="fas fa-user-plus"></i>
+                </span>
+                <span class="text">
+                &nbsp;&nbsp;SEE ALL&nbsp;&nbsp;
+                </span>
+            </a>
+
+            <p>Results for <b><i>'<?=$search?>'</i></b></p>
+
 <hr>
 
 
@@ -29,8 +42,9 @@ include "header.php";
                 $table_name="orders";
                 $column = "id";
                 $valuex = $_SESSION['idxx'] ;
-
-                $get_userData = get_where_desc($table_name, $column, $valuex);
+                
+                
+                $get_userData = order_mn_search($table_name, $search, $valuex);
         
                 foreach ($get_userData as $key => $row) {
                     $order_id=$row['order_id'];

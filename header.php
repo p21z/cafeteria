@@ -44,7 +44,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                    <i class="fas fa-utensils"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">
                     Cafeteria <br>
@@ -57,7 +57,7 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="home.php">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="fas fa-home"></i>
                     <span>Homepage</span></a>
             </li>
 
@@ -74,7 +74,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="accountmanage.php" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="fas fa-user-friends"></i>
                     <span>Accounts</span>
                 </a>
 
@@ -83,7 +83,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="menucontent.php" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="fas fa-drumstick-bite"></i>
                     <span>Menu Content</span>
                 </a>
                 
@@ -92,7 +92,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="logs.php" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="far fa-eye"></i>
                     <span>Logs</span>
                 </a>
                 
@@ -114,7 +114,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="tablereservations.php" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="fas fa-clipboard-check"></i>
                     <span>Table Reservations</span>
                 </a>
                 
@@ -123,7 +123,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="customerorder.php" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="far fa-file-alt"></i>
                     <span>Active Orders</span>
                 </a>
                 
@@ -132,7 +132,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="finishedorder.php" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="fas fa-file-alt"></i>
                     <span>Finished Orders</span>
                 </a>
                 
@@ -153,7 +153,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="reservetable.php" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="fas fa-concierge-bell"></i>
                     <span>Reserve Table</span>
                 </a>
                 
@@ -162,7 +162,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="orderfood.php" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="fas fa-utensils"></i>
                     <span>Order Food</span>
                 </a>
                 
@@ -171,7 +171,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="receipt.php" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="fas fa-receipt"></i>
                     <span>Receipts</span>
                 </a>
                 
@@ -197,18 +197,6 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-secondary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">

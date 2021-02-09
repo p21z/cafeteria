@@ -55,13 +55,13 @@ include "header.php";
     <div class="card-body ">
         <div class="table-responsive">
 
-            <form
-                class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search w-25">
+        <form method="post" action="menu_search.php"
+                class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search w-25" style="float: left; margin-top: 1px;">
                 <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                        aria-label="Search" aria-describedby="basic-addon2">
+                    <input type="text" class="form-control bg-light border-0 small" name="search"
+                        aria-label="Search" aria-describedby="basic-addon2" autocomplete="off" required>
                     <div class="input-group-append">
-                        <button class="btn btn-secondary" type="button">
+                        <button class="btn btn-secondary" type="submit">
                             <i class="fas fa-search fa-sm"></i>
                         </button>
                     </div>
@@ -77,9 +77,9 @@ include "header.php";
                         </span>
                     </a>
                 </button>
-                <button type="button" class="btn btn-outline-secondary">
+                <button type="button" class="btn btn-outline-secondary bg-primary">
                     <a href="menucontent_unavailable.php">
-                        <span class="text">
+                        <span class="text text-white">
                             Unavailable
                         </span>
                     </a>
@@ -93,7 +93,7 @@ include "header.php";
                 </button>
             </div>
             
-            <a href="food_add.php" class="btn btn-primary btn-icon-split add-item">
+            <a href="food_add.php" class="btn btn-primary btn-icon-split add-item btn-sm">
                 <span class="icon text-white-50">
                     <i class="fas fa-user-plus"></i>
                 </span>

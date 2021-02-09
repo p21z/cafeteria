@@ -1,6 +1,6 @@
 <?php
-
 include "header.php";
+$search=$_POST['search'];
 ?>
 
 <?php
@@ -72,14 +72,16 @@ include "header.php";
                 </div>
             </form> -->
 
-            <a href="account_add.php" class="btn btn-primary btn-icon-split add-item" style="margin-top:-1px">
+            <a href="accountmanage.php" class="btn btn-info btn-icon-split add-item" style="margin-top:-1px">
                 <span class="icon text-white-50">
                     <i class="fas fa-user-plus"></i>
                 </span>
                 <span class="text">
-                    ADD USER
+                &nbsp;&nbsp;SEE ALL&nbsp;&nbsp;
                 </span>
             </a>
+
+            <p>Results for <b><i>'<?=$search?>'</i></b></p>
 
             <hr>
 
@@ -115,7 +117,7 @@ include "header.php";
     <?php
         $table_name="accounts";
 
-        $user_data=get($table_name);
+        $user_data=acc_search($table_name, $search);
 
         foreach ($user_data as $key => $row) {
             $id=$row['id'];
