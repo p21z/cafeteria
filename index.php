@@ -47,6 +47,17 @@
                             unset($_SESSION['login']);
                     }
                 }
+                if (isset($_SESSION['login'])){
+                    if ($_SESSION['login']==2){
+                        echo "
+                            <div class='card mt-4 py-3 border-bottom-danger'>
+                                <div class='card-body text-danger'>
+                                <b>ACCOUNT DISABLED <br> CONTACT THE ADMIN TO GET HELP</b>
+                                </div>
+                            </div>";
+                            unset($_SESSION['login']);
+                    }
+                }
             ?>
             <form method=post action="login_proc.php">
                 <input type="text" name="username" placeholder="Username" required autocomplete="off" class="form-control form-control-user" style="width:40%; margin-left:3%; margin-top:6%;">

@@ -44,7 +44,7 @@ include "header.php";
 
 
 
-<div class="card w-75">
+<div class="card w-100">
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">ACCOUNTS</h6>
             </div>
@@ -93,6 +93,8 @@ include "header.php";
         <td>School ID</td>
         <td>Fullname</td>
         <td>User Type</td>
+        <td>Status</td>
+        <td>Attempts</td>
         <td>Option</td>
 
     </tr>
@@ -105,6 +107,8 @@ include "header.php";
         <td>School ID</td>
         <td>Fullname</td>
         <td>User Type</td>
+        <td>Status</td>
+        <td>Attempts</td>
         <td>Option</td>
 
     </tr>
@@ -123,7 +127,8 @@ include "header.php";
             $reference_id=$row['reference_id'];
             $fullname=$row['fullname'];
             $username=$row['username'];
-            
+            $statusxx=$row['statusxx'];
+            $counterxx=$row['counterxx'];
             // if ($user_type==0){
             //     $user_type="GOVERNOR";
             // } elseif ($user_type==1){
@@ -141,7 +146,40 @@ include "header.php";
         <td><?= $reference_id ?></td>
         <td><?= $fullname ?></td>
         <td><?= $user_type ?></td>
+        <td><?php
+            if($statusxx=="0"){
+                echo "Active";
+            } else{
+                echo "Inactive";
+            }?></td>
+        <td><?= $counterxx ?></td>
         <td>
+            <?php
+            if($statusxx=="0"){
+            ?>
+                <a href="account_deact.php?id=<?= $id?>" class="btn btn-light btn-icon-split add-item" style="margin-top:-1px">
+                <span class="icon text-white-50">
+                    <i class="fas fa-user-plus"></i>
+                </span>
+                <span class="text">
+                    DEACTIVATE
+                </span>
+            </a>
+            <?php
+            } else{
+            ?>
+                <a href="account_act.php?id=<?= $id?>" class="btn btn-dark btn-icon-split add-item" style="margin-top:-1px">
+                <span class="icon text-white-50">
+                    <i class="fas fa-user-plus"></i>
+                </span>
+                <span class="text">
+                    &nbsp;ACTIVATE&nbsp;&nbsp;&nbsp;&nbsp;
+                </span>
+            </a>
+            <?php
+            }
+            ?>
+            
             <a href="account_edit.php?id=<?= $id?>" class="btn btn-warning btn-circle btn-md">
                 <i class="far fa-edit"></i>
             </a>
