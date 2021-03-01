@@ -7,7 +7,7 @@ include "header.php";
   <div class="card mb-4 w-75">
 
     <div class="card-header">
-        ADD NEW USER
+        ADD NEW FOOD
     </div>
 
     <form method="post" action="food_add_proc.php" enctype="multipart/form-data">

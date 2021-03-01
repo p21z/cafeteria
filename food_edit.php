@@ -27,7 +27,7 @@
   <div class="card mb-4 w-75">
 
     <div class="card-header">
-        ADD NEW USER
+        EDIT FOOD
     </div>
 
     <form method="post" action="<?= $form_location?>" enctype="multipart/form-data">

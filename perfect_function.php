@@ -607,12 +607,11 @@ function order_dn_search($table_name, $search)
 {
 	$conn = getConnection();
 	$sql = "SELECT * FROM $table_name where
-	 (food_id LIKE '%$search%' OR
-	 food_name LIKE '%$search%' OR
-	 image LIKE '%$search%' OR 
-	 description LIKE '%$search%' OR 
-	 price LIKE '%$search%' OR 
-	 status LIKE '%$search%')  AND (status = 'Available')";
+	 (order_id LIKE '%$search%' OR
+	 total_list LIKE '%$search%' OR
+	 carts LIKE '%$search%' OR 
+	 id LIKE '%$search%' OR 
+	 fullname LIKE '%$search%')  AND (status != 'Pending' OR status != 'Ready')";
 	$result = $conn->query($sql);
 	return $result;
 }

@@ -18,7 +18,7 @@ $search=$_POST['search'];
     </div>
 </form>
 
-    <a href="accountmanage.php" class="btn btn-info btn-icon-split add-item" style="margin-top:-1px">
+    <a href="customerorder.php" class="btn btn-info btn-icon-split add-item" style="margin-top:-1px">
         <span class="icon text-white-50">
             <i class="fas fa-user-plus"></i>
         </span>
