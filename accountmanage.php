@@ -185,7 +185,7 @@ include "header.php";
             </a>
             &nbsp;&nbsp;&nbsp;
             <a href="account_delete.php?id=<?= $id?>" class="btn btn-danger btn-circle btn-md">
-                <i class="far fa-trash-alt"></i>
+                <i class="far fa-trash"></i>
             </a>
         </td>
 

@@ -17,6 +17,8 @@ $user_data = get_where_custom($table_name, "username", $username);
         $statusxx=$row['statusxx'];
         $counter=$row['counterxx'];
     }
+    $no_acc = count($user_data);
+    echo $no_acc;
 
 if ($statusxx==1){
     $_SESSION['login']=2;

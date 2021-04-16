@@ -551,6 +551,18 @@ function food_search($table_name, $search)
 	return $result;
 }
 
+function food_av_search($table_name, $search)
+{
+	$conn = getConnection();
+	$sql = "SELECT * FROM $table_name where
+	 (food_id LIKE '%$search%' OR
+	 food_name LIKE '%$search%' OR 
+	 'image' LIKE '%$search%' OR 
+	 description LIKE '%$search%') AND (status='Available')";
+	$result = $conn->query($sql);
+	return $result;
+}
+
 function reserve_active_search($table_name, $search)
 {
 	$conn = getConnection();

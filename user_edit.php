@@ -2,7 +2,7 @@
     include "header.php";
 
     $id = $_GET['id'];
-    $form_location = "account_edit_proc.php?id=".$id;
+    $form_location = "user_edit_proc.php?id=".$id;
 
     $table_name = "accounts";
     $column = "id";
@@ -37,12 +37,7 @@
 
         <input type="text" name="username" class="form-control form-control-user" autocomplete=off value="<?=   $username ?>" style="width:40%; margin-left:3%; margin-top:3%;" readonly>
 
-        <select type="text" name="user_type" class="form-control form-control-user" autocomplete=off required style="width:40%; margin-left:6%; margin-right: 3%; margin-top:3%;">
-          <option value="">User type:</option>
-          <option value="Employee">Employee</option>
-          <option value="Student">Student</option>
-          <option value="Staff">Staff</option>
-        </select>
+        <input type="text" name="user_type" class="form-control form-control-user" autocomplete=off value="<?=   $user_type ?>" style="width:40%; margin-left:3%; margin-top:3%;" readonly>
 
         <input type="text" name="reference_id" class="form-control form-control-user" autocomplete=off value="<?=   $reference_id ?>"  style="width:40%; margin-left:3%; margin-top:3%;" readonly>
 

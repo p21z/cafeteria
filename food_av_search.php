@@ -80,7 +80,7 @@ $search=$_POST['search'];
                 $table_name="food";
                 $column = "status";
                 $condition="Available";
-                $get_userData = order_dn_search($table_name, $search);
+                $get_userData = food_av_search($table_name, $search);
         
                 foreach ($get_userData as $key => $row) {
                     $food_id=$row['food_id'];
